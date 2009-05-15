@@ -7,10 +7,9 @@
  *
  * Author: Mark Gibson (jollytoad at gmail dot com)
  */
-(jQuery.dt && (function($) {
+(function($) {
 
-$.extend($.dt, {
-
+var fns = {
 	// Convert an object/array/jQuery to a raw string
 	write:
 		function( value ) {
@@ -33,11 +32,16 @@ $.extend($.dt, {
 	// Read an attribute and convert it to the specified datatype
 	attr:
 		function( elem, name, datatype ) {
-			return $.dt[datatype]( $.attr( elem, name ) );
+			return this[datatype]( $.attr( elem, name ) );
 		}
+};
 
+// Add functions to $.dt and $.xsd
+$.each(['dt','xsd'], function() {
+	if ( $[this] ) {
+		$.extend($[this], fns);
+	}
 });
 
-})(jQuery)
-);
+})(jQuery);
 

@@ -1,5 +1,5 @@
 /*
- * jQuery XSD Datatypes @VERSION (@DATE)
+ * jQuery XSD Datatypes 0.1 (20090515)
  *
  * Copyright (c) 2009 Adaptavist.com Ltd
  * Dual licensed under the MIT (MIT-LICENSE.txt)

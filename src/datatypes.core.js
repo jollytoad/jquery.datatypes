@@ -13,7 +13,7 @@
 
 $.dt = {
 	string:
-		function( str ) { return str; },
+		function( str ) { return str === null || str === undefined ? undefined : ''+str; },
 		
 	bool:
 		function( str ) {
@@ -42,7 +42,9 @@ $.dt = {
 		},
 	
 	integer:
-		parseInt
+		function( str ) {
+			return parseInt(str, 10);
+		}
 };
 
 })(jQuery)
