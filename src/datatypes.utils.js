@@ -13,6 +13,9 @@ var fns = {
 	// Convert an object/array/jQuery to a raw string
 	write:
 		function( value ) {
+			if ( value === undefined || value === null ) {
+				return '';
+			}
 			if ( value.jquery ) {
 				// Convert to an idrefs string
 				return Array.prototype.join.call(value.map(function() { return this.id; }), ' ');
