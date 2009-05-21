@@ -7,6 +7,11 @@
  *
  * Author: Mark Gibson (jollytoad at gmail dot com)
  */
+/* Optional dependencies:
+ *   datatypes.core.js
+ *   datatypes.xsd.js
+ *   datatypes.idrefs.js
+ */
 (function($) {
 
 var fns = {
@@ -18,11 +23,12 @@ var fns = {
 			}
 			if ( value.jquery ) {
 				// Convert to an idrefs string
-				return Array.prototype.join.call(value.map(function() { return this.id; }), ' ');
+				return $.fn.idrefs ? $(value).idrefs() :
+					Array.prototype.join.call(value.map(function() { return this.id; }), ' ');
 			}
-			if ( typeof value.id === 'string' ) {
+			if ( value.nodeType === 1 ) {
 				// Assume this is a single DOM element, convert to an idref string
-				return value.id;
+				return $.id ? $.id(value) : value.id;
 			}
 			if ( $.isArray(value) ) {
 				// Assume this is tokens
