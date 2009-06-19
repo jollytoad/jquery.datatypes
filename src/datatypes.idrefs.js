@@ -21,7 +21,7 @@ $.id = function( elem ) {
 
 // Returns a space separated list of the id's of the elements
 $.fn.idrefs = function() {
-	return $(this).map(function() { return $.id(this); }).join(' ');
+	return Array.prototype.join.call($(this).map(function() { return $.id(this); }), ' ');
 };
 
 })(jQuery);
