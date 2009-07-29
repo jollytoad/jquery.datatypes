@@ -1,4 +1,4 @@
-PACKAGE = jquery-datatypes
+PACKAGE = jquery.datatypes
 
 MODULES = \
 	datatypes.core.js \
