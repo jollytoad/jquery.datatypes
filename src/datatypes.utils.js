@@ -1,5 +1,5 @@
 /*
- * jQuery Datatypes Utility Functions @VERSION (@DATE)
+ * jQuery Datatypes Utility Functions @VERSION
  *
  * Copyright (c) 2009 Adaptavist.com Ltd
  * Dual licensed under the MIT (MIT-LICENSE.txt)
